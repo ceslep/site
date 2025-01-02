@@ -1,10 +1,17 @@
+---
+import { ClientRouter } from "astro:transitions";
+import Header from "../components/Header.astro";
+const { title, description } = Astro.props;
+---
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Astro Layout</title>
+    <title>{title}</title>
     <style>
       html,
       body {
@@ -13,63 +20,14 @@
         height: 100%;
       }
     </style>
+    <ClientRouter />
   </head>
   <body>
-    <header class="bg-blue-600 text-white">
-      <div class="container mx-auto flex justify-between items-center p-4">
-        <!-- Logo -->
-        <a href="#" class="text-xl font-bold">Mi Sitio</a>
-
-        <!-- Menú principal -->
-        <nav class="hidden md:flex space-x-4">
-          <a href="/" class="hover:text-gray-300">Inicio</a>
-          <a href="/nosotros" class="hover:text-gray-300">Nosotros</a>
-          <a href="/servicios" class="hover:text-gray-300">Servicios</a>
-          <a href="#portafolio" class="hover:text-gray-300">Portafolio</a>
-          <a href="#contacto" class="hover:text-gray-300">Contacto</a>
-        </nav>
-
-        <!-- Botón Menú móvil -->
-        <button
-          class="md:hidden focus:outline-none"
-          id="menu-toggle"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            />
-          </svg>
-        </button>
-      </div>
-
-      <!-- Menú móvil -->
-      <div
-        class="md:hidden bg-blue-500 text-white hidden"
-        id="mobile-menu"
-      >
-        <a href="/" class="block py-2 px-4 hover:bg-blue-700">Inicio</a>
-        <a href="/nosotros" class="block py-2 px-4 hover:bg-blue-700">Nosotros</a>
-        <a href="/servicios" class="block py-2 px-4 hover:bg-blue-700">Servicios</a>
-        <a href="#portafolio" class="block py-2 px-4 hover:bg-blue-700">Portafolio</a>
-        <a href="#contacto" class="block py-2 px-4 hover:bg-blue-700">Contacto</a>
-      </div>
-    </header>
+    <Header/>
     <slot />
-    <script>
-      // Interactividad del menú móvil
-      document.getElementById('menu-toggle')?.addEventListener('click', () => {
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenu?.classList.toggle('hidden');
-      });
-    </script>
+   
   </body>
 </html>
+
+
+ 

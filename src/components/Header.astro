@@ -1,0 +1,74 @@
+---
+
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('info');
+
+
+---
+
+
+<header class="bg-blue-600 text-white">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <!-- Logo -->
+      <a href="/" class="text-xl font-bold">Mi Sitio</a>
+
+      <!-- Menú principal -->
+      <nav class="hidden md:flex space-x-4">
+
+        {
+          posts.map((post) => (
+            <a href={`/info/${post.slug}`} class="hover:text-gray-300">{post.data.id}</a>
+          ))
+        }
+
+       <!--  <a href={`/info/}`} class="hover:text-gray-300">Inicio</a>
+        <a href="/nosotros" class="hover:text-gray-300">Nosotros</a>
+        <a href="/servicios" class="hover:text-gray-300">Servicios</a> -->
+       
+      </nav>
+
+      <!-- Botón Menú móvil -->
+      <button
+        class="md:hidden focus:outline-none"
+        id="menu-toggle"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menú móvil -->
+    <div
+      class="md:hidden bg-blue-500 text-white hidden"
+      id="mobile-menu"
+    >
+    {
+        posts.map((post) => (
+          <a href={`/info/${post.slug}`} class="hover:text-gray-300">{post.data.id}</a>
+        ))
+      }
+    </div>
+  </header>
+
+
+
+  <script>
+    // Interactividad del menú móvil
+    document.getElementById('menu-toggle')?.addEventListener('click', () => {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu?.classList.toggle('hidden');
+    });
+  </script>

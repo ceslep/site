@@ -1,0 +1,30 @@
+---
+import { slide } from 'astro:transitions';
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+const { slug } = Astro.params;
+
+const posts = await getCollection('info');
+
+const post = posts.find((post) => post.slug === slug);
+
+
+if (!post) {
+  throw new Error(`Post no encontrado: ${slug}`);
+}
+
+const { data, body } = post;
+---
+
+<Layout>
+
+<div transition:animate={slide({ duration: '0.4s' })} class="container mx-auto flex items-center justify-center min-h-screen">
+    <article>
+        <h1>{data.title}</h1>
+        <p><strong>Fecha:</strong> {data.date.toDateString()}</p>
+        <p>{data.description}</p>
+        <div>{body}</div>
+      </article> 
+        
+</div>
+</Layout>

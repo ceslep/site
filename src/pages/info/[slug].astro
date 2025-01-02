@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { slide } from 'astro:transitions';
+
+
+
+export async function getStaticPaths() {
+    // Obtiene todos los posts de la colección "info"
+    const posts = await getCollection('info');
+    
+    // Genera un array con los slugs de los posts
+    const paths = posts.map((post) => ({
+        params: { slug: post.slug },
+    }));
+    
+    return paths;
+}
+
+const { slug } = Astro.params;
+
+console.log(Astro.params)
+
+// Obtiene todos los posts de la colección "info"
+const posts = await getCollection('info');
+
+// Filtra el post que coincida con el slug
+const post = posts.find((post) => post.slug === slug);
+
+if (!post) {
+  throw new Error(`Post no encontrado: ${slug}`);
+}
+
+const { data, body } = post;
+---
+<Layout title={data.title} description={data.description}>
+
+  <article transition:animate={slide({ duration: '0.4s' })}>
+    <h1>{data.title}</h1>
+    <p><strong>Fecha:</strong> {data.date.toDateString()}</p>
+    <p>{data.description}</p>
+    <div>{body}</div>
+  </article>
+
+</Layout>
