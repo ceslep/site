@@ -8,4 +8,4 @@ tags: ["Metalmecánica", "Industria", "Soluciones"]
 
 ¡Bienvenidos al blog de nuestra empresa metalmecánica! 🛠️
 
-Nos especializamos en brindar soluciones innovadoras en la fabricación, diseño y mantenimiento de estructuras metálicas. Con años de experiencia en el sector, garantizamos calidad, precisión y excelencia en cada proyecto que desarrollamos. 🚀
+Nos **especializamos** en brindar soluciones innovadoras en la fabricación, diseño y mantenimiento de estructuras metálicas. Con años de experiencia en el sector, garantizamos calidad, precisión y excelencia en cada proyecto que desarrollamos. 🚀
