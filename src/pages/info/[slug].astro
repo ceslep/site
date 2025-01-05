@@ -1,7 +1,19 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import { slide } from "astro:transitions";
+import { slide,fade} from "astro:transitions";
+import background from '../../assets/background.svg';
+
+
+function getRandomTransition() {
+  const transitions = [
+    slide({ duration: "0.4s" }),
+    fade({ duration: "0.4s" }),
+    
+  ];
+  const randomIndex = Math.floor(Math.random() * transitions.length);
+  return transitions[randomIndex];
+}
 
 export async function getStaticPaths() {
   // Obtiene todos los posts de la colección "info"
@@ -17,7 +29,6 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 
-console.log(Astro.params);
 
 // Obtiene todos los posts de la colección "info"
 const posts = await getCollection("info");
@@ -30,15 +41,59 @@ if (!post) {
 }
 
 const { data, body } = post;
+
+
+function processMarkdownToHTML(text:String):String {
+      return text
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Convierte **texto** en <strong>texto</strong>
+        .replace(/\n/g, '<br>'); // Convierte saltos de línea en <br>
+    }
+
+    // Procesar el texto
+    const formattedText:String = processMarkdownToHTML(body);
+
+
+    const sanitizeHtml = (html:String):String => {
+  return html; // Usa librerías como DOMPurify si necesitas sanitización estricta
+};
 ---
 
 <Layout title={data.title} description={data.description}>
-  <article class="m-5" transition:animate={slide({ duration: "0.4s" })}>
+  <main style=`background-image: url(${background.src})`>
+    
+  <article class="m-5" transition:animate={getRandomTransition()}>
     <h1 class="text-4xl text-red-500 text-center">{data.title}</h1>
     <p class="p-3 text-center"><strong>Fecha:</strong> {data.date.toDateString()}</p>
     <p class="prose text-blue-800 p-5 text-md-center font-bold">
       {data.description}
     </p>
-    <div class="prose text-justify p-4">{body}</div>
+    <div class="prose text-justify p-4" set:html={sanitizeHtml(formattedText)}></div>
   </article>
+</main>
 </Layout>
+
+
+<style>
+ 
+ 
+@media (min-width: 720px) {
+  main {
+    padding: 40px;
+  }
+  .content {
+    padding: 40px;
+    font-size: 1.4em;
+  }
+  .text-4xl {
+    font-size: 3rem;
+  }
+  .text-md-center {
+    text-align: center;
+  }
+}
+</style>
+
+
+<script>
+  
+</script>
