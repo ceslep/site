@@ -3,6 +3,7 @@ id: "servicios"
 title: "Nuestros servicios metalmecánicos"
 description: "Descubre los servicios que ofrecemos para satisfacer tus necesidades industriales."
 date: "2025-01-01"
+img: "/src/assets/siteimgs/metal.png"
 tags: ["Servicios", "Metalmecánica", "Industria", "Corte Láser"]
 ---
 

@@ -3,6 +3,7 @@ id: "nosotros"
 title: "Conoce nuestra empresa metalmecánica"
 description: "Explora los servicios y capacidades de nuestra empresa especializada en soluciones metalmecánicas."
 date: "2025-01-01"
+img: "/src/assets/siteimgs/metal.png"
 tags: ["Metalmecánica", "Industria", "Soluciones"]
 ---
 

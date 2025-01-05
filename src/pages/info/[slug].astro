@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
+import Layout from "@/layouts/Layout.astro";
 import { slide,fade} from "astro:transitions";
-import background from '../../assets/background.svg';
+import background from '@assets/background.svg';
 
 
 function getRandomTransition() {
@@ -19,8 +19,9 @@ export async function getStaticPaths() {
   // Obtiene todos los posts de la colección "info"
   const posts = await getCollection("info");
 
+  
   // Genera un array con los slugs de los posts
-  const paths = posts.map((post) => ({
+  const paths = posts.map((post:any) => ({
     params: { slug: post.slug },
   }));
 
@@ -34,13 +35,15 @@ const { slug } = Astro.params;
 const posts = await getCollection("info");
 
 // Filtra el post que coincida con el slug
-const post = posts.find((post) => post.slug === slug);
+const post = posts.find((post:any) => post.slug === slug);
 
 if (!post) {
   throw new Error(`Post no encontrado: ${slug}`);
 }
 
 const { data, body } = post;
+
+console.log(data);
 
 
 function processMarkdownToHTML(text:String):String {
@@ -59,9 +62,9 @@ function processMarkdownToHTML(text:String):String {
 ---
 
 <Layout title={data.title} description={data.description}>
-  <main style=`background-image: url(${background.src})`>
-    
-  <article class="m-5" transition:animate={getRandomTransition()}>
+  <main style=`background-image: url(${background.src})` transition:animate={getRandomTransition()}>
+  <div class="grid">
+  <article class="m-5" >
     <h1 class="text-4xl text-red-500 text-center">{data.title}</h1>
     <p class="p-3 text-center"><strong>Fecha:</strong> {data.date.toDateString()}</p>
     <p class="prose text-blue-800 p-5 text-md-center font-bold">
@@ -69,6 +72,10 @@ function processMarkdownToHTML(text:String):String {
     </p>
     <div class="prose text-justify p-4" set:html={sanitizeHtml(formattedText)}></div>
   </article>
+  <figure >
+  <img src={data.img} alt={data.title} class="rounded-2xl w-96 h-96 m-5 align-middle"/>
+  </figure>
+</div>  
 </main>
 </Layout>
 
@@ -77,6 +84,19 @@ function processMarkdownToHTML(text:String):String {
  
  
 @media (min-width: 720px) {
+
+  .grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+  }
+
+  figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   main {
     padding: 40px;
   }

@@ -1,7 +1,7 @@
 ---
 import { ClientRouter } from "astro:transitions";
-import Header from "../components/Header.astro";
-
+import Header from "@/components/Header.astro";
+import background from '@assets/background.svg';
 
 const { title, description } = Astro.props;
 ---
@@ -24,7 +24,7 @@ const { title, description } = Astro.props;
     </style>
     <ClientRouter />
   </head>
-  <body>
+  <body style=`background-image: url(${background.src})`>
     <Header/>
     <slot />
   

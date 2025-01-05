@@ -6,6 +6,7 @@ const infoCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     date: z.string().transform((str) => new Date(str)),
+    img: z.string().optional(),
     tags: z.array(z.string()),
   }),
 });

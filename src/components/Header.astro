@@ -1,11 +1,11 @@
 ---
 import { getCollection } from "astro:content";
 
-import HeaderSvelte from "../components/Svelte/HeaderSvelte.svelte";
+import HeaderSvelte from "@svelte/HeaderSvelte.svelte";
 
 const posts = await getCollection("info");
 
-const Posts = posts.map((post) => {
+const Posts = posts.map((post:any) => {
   return {
     id: post.data.id,
     slug: post.slug,
