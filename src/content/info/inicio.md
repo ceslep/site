@@ -3,7 +3,7 @@ id: inicio
 title: "Bienvenidos a nuestra empresa metalmecánica"
 description: "Conoce quiénes somos y cómo transformamos el sector metalmecánico con nuestras soluciones innovadoras."
 date: "2025-01-01"
-img: "/src/assets/siteimgs/metal.png"
+img: "/src/assets/siteimgs/metal.webp"
 tags: ["Presentación", "Metalmecánica", "Innovación", "Industria"]
 ---
 
@@ -18,3 +18,4 @@ Somos una compañía dedicada a ofrecer soluciones integrales en el sector metal
 - **Equipo profesional:** Un equipo altamente capacitado que asegura resultados excepcionales.  
 
 ¡Unimos tecnología, talento y pasión para hacer crecer tus proyectos! 🚀
+<button>Hola</button>

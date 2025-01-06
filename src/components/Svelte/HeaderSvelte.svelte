@@ -51,7 +51,7 @@
   </div>
 
   <!-- Menú móvil -->
-  <div class="md:hidden bg-blue-500 text-white hidden" id="mobile-menu">
+  <div class="md:hidden bg-blue-500 text-white hidden position:fixed" id="mobile-menu">
     {#each Posts as post}
       <a href={`/info/${post.slug}`} class="block py-2 px-4 hover:bg-blue-700"
         >{post.slug}</a

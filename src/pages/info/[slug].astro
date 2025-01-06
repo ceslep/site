@@ -1,16 +1,11 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
-import { slide,fade} from "astro:transitions";
-import background from '@assets/background.svg';
-
+import { slide, fade } from "astro:transitions";
+import background from "@assets/background.svg";
 
 function getRandomTransition() {
-  const transitions = [
-    slide({ duration: "0.4s" }),
-    fade({ duration: "0.4s" }),
-    
-  ];
+  const transitions = [slide({ duration: "0.4s" }), fade({ duration: "0.4s" })];
   const randomIndex = Math.floor(Math.random() * transitions.length);
   return transitions[randomIndex];
 }
@@ -19,23 +14,20 @@ export async function getStaticPaths() {
   // Obtiene todos los posts de la colección "info"
   const posts = await getCollection("info");
 
-  
   // Genera un array con los slugs de los posts
-  const paths = posts.map((post:any) => ({
+  const paths = posts.map((post: any) => ({
     params: { slug: post.slug },
+    props: { post },
   }));
 
   return paths;
 }
 
 const { slug } = Astro.params;
-
+const { post } = Astro.props;
 
 // Obtiene todos los posts de la colección "info"
 const posts = await getCollection("info");
-
-// Filtra el post que coincida con el slug
-const post = posts.find((post:any) => post.slug === slug);
 
 if (!post) {
   throw new Error(`Post no encontrado: ${slug}`);
@@ -45,84 +37,95 @@ const { data, body } = post;
 
 console.log(data);
 
+function processMarkdownToHTML(text: String): String {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") // Convierte **texto** en <strong>texto</strong>
+    .replace(/\n/g, "<br>"); // Convierte saltos de línea en <br>
+}
 
-function processMarkdownToHTML(text:String):String {
-      return text
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Convierte **texto** en <strong>texto</strong>
-        .replace(/\n/g, '<br>'); // Convierte saltos de línea en <br>
-    }
+// Procesar el texto
+const formattedText: String = processMarkdownToHTML(body);
 
-    // Procesar el texto
-    const formattedText:String = processMarkdownToHTML(body);
-
-
-    const sanitizeHtml = (html:String):String => {
+const sanitizeHtml = (html: String): String => {
   return html; // Usa librerías como DOMPurify si necesitas sanitización estricta
 };
 ---
 
 <Layout title={data.title} description={data.description}>
-  <main style=`background-image: url(${background.src})` transition:animate={getRandomTransition()}>
-  <div class="grid">
-  <article class="m-5" >
-    <h1 class="text-4xl text-red-500 text-center">{data.title}</h1>
-    <p class="p-3 text-center"><strong>Fecha:</strong> {data.date.toDateString()}</p>
-    <p class="prose text-blue-800 p-5 text-md-center font-bold">
-      {data.description}
-    </p>
-    <div class="prose text-justify p-4" set:html={sanitizeHtml(formattedText)}></div>
-  </article>
-  <figure >
-  <img src={data.img} alt={data.title} class="rounded-2xl w-96 h-96 m-5 align-middle"/>
-  </figure>
-</div>  
-</main>
+  <main
+    style=`background-image: url(${background.src})`
+    transition:animate={getRandomTransition()}
+  >
+    <section class="grid">
+      <article class="m-5">
+        <h1 class="text-4xl text-red-500 text-center">{data.title}</h1>
+        <p class="p-3 text-center">
+          <strong>Fecha:</strong>
+          {data.date.toDateString()}
+        </p>
+        <p class="prose text-blue-800 p-5 text-md-center font-bold">
+          {data.description}
+        </p>
+        <div
+          class="prose text-justify p-4"
+          set:html={sanitizeHtml(formattedText)}
+        />
+      </article>
+      <figure>
+        {
+          data.img && (
+            <img
+              src={data.img}
+              alt={data.title}
+              class="rounded-2xl w-96 h-96 m-5 align-middle"
+            />
+          )
+        }
+      </figure>
+    </section>
+  </main>
 </Layout>
 
-
 <style>
-
-
-@media (max-width: 719px) {
-  figure{
-    display: flex;
-    margin: 20px;
-    padding: auto;
-    justify-content: center;
-  }
-}
- 
-@media (min-width: 720px) {
-
-  .grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-
+  @media (max-width: 719px) {
+    figure {
+      display: flex;
+      margin: 20px;
+      padding: auto;
+      justify-content: center;
+    }
+    figure img {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+    }
   }
 
-  figure{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  @media (min-width: 720px) {
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    figure {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    main {
+      padding: 40px;
+    }
+    .content {
+      padding: 40px;
+      font-size: 1.4em;
+    }
+    .text-4xl {
+      font-size: 3rem;
+    }
+    .text-md-center {
+      text-align: center;
+    }
   }
-  main {
-    padding: 40px;
-  }
-  .content {
-    padding: 40px;
-    font-size: 1.4em;
-  }
-  .text-4xl {
-    font-size: 3rem;
-  }
-  .text-md-center {
-    text-align: center;
-  }
-}
 </style>
 
-
-<script>
-  
-</script>
+<script></script>
