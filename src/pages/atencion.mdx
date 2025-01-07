@@ -5,12 +5,18 @@ description: "Conoce quiénes somos y cómo transformamos el sector metalmecáni
 date: "2025-01-01"
 tags: ["Presentación", "Metalmecánica", "Innovación", "Industria"]
 ---
-import ButtonSvelte from '@/components/Svelte/ButtonSvelte.svelte'
 
+
+import ButtonReact from "@react/ButtonReact.jsx"
+import ButtonSvelte from "@svelte/ButtonSvelte.svelte"
+
+<ButtonReact client:load/>
+<ButtonSvelte client:load/>
 
 ## Más contenido aquí
-- Puedes usar Markdown normal
+
+ {frontmatter.title}
+- Puedes usar Markdown normal.
 - ¡Y también componentes de React!
-<ButtonSvelte>
-Hola mundo
-</ButtonSvelte>
+
+
