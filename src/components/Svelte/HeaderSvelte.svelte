@@ -10,13 +10,13 @@
   };
 </script>
 
-<header class="bg-blue-600 text-white" use:action>
+<header class=" bg-gradient-to-b from-blue-200 to to-blue-500" use:action>
   <div class="container mx-auto flex justify-between items-center p-4">
     <!-- Logo -->
     <a href="/" class="text-xl font-bold">Mi Sitio</a>
 
     <!-- Menú principal -->
-    <nav class="hidden md:flex space-x-4">
+    <nav class="hidden md:flex space-x-4"> 
       {#each Posts as post}
         <a href={`/info/${post.slug}`} class="hover:text-gray-300">{post.id}</a>
         <!-- content here -->
@@ -51,7 +51,10 @@
   </div>
 
   <!-- Menú móvil -->
-  <div class="md:hidden bg-blue-500 text-white hidden position:fixed" id="mobile-menu">
+  <div 
+  class="md:hidden bg-blue-500 text-white fixed top-0 left-0 w-full p-4 shadow-lg z-50 hidden" 
+  id="mobile-menu"
+>
     {#each Posts as post}
       <a href={`/info/${post.slug}`} class="block py-2 px-4 hover:bg-blue-700"
         >{post.slug}</a

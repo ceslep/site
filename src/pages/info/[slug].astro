@@ -56,14 +56,14 @@ const sanitizeHtml = (html: String): String => {
     style=`background-image: url(${background.src})`
     transition:animate={getRandomTransition()}
   >
-    <section class="grid">
+   
+    <section class="grid grid-cols-1 sm:grid-cols-2 gap-5 p-10">
       <article class="m-5">
-        <h1 class="text-4xl text-red-500 text-center">{data.title}</h1>
+        <h1 class="text-4xl sm:text-6xl text-red-500 text-center">{data.title}</h1>
         <p class="p-3 text-center">
-          <strong>Fecha:</strong>
-          {data.date.toDateString()}
+          <strong>Fecha:</strong> {data.date.toDateString()}
         </p>
-        <p class="prose text-blue-800 p-5 text-md-center font-bold">
+        <p class="prose text-blue-800 p-5 text-center font-bold">
           {data.description}
         </p>
         <div
@@ -71,61 +71,19 @@ const sanitizeHtml = (html: String): String => {
           set:html={sanitizeHtml(formattedText)}
         />
       </article>
-      <figure>
-        {
-          data.img && (
-            <img
-              src={data.img}
-              alt={data.title}
-              class="rounded-2xl w-96 h-96 m-5 align-middle"
-            />
-          )
-        }
+      <figure class="flex justify-center items-center sm:items-start m-5">
+        {data.img && (
+          <img
+            src={data.img}
+            alt={data.title}
+            class="rounded-2xl w-full sm:w-96 sm:h-96 object-cover"
+          />
+        )}
       </figure>
     </section>
+    
   </main>
 </Layout>
 
-<style>
-  @media (max-width: 719px) {
-    figure {
-      display: flex;
-      margin: 20px;
-      padding: auto;
-      justify-content: center;
-    }
-    figure img {
-      aspect-ratio: 1 / 1;
-      width: 100%;
-    }
-  }
-
-  @media (min-width: 720px) {
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    figure {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    main {
-      padding: 40px;
-    }
-    .content {
-      padding: 40px;
-      font-size: 1.4em;
-    }
-    .text-4xl {
-      font-size: 3rem;
-    }
-    .text-md-center {
-      text-align: center;
-    }
-  }
-</style>
 
 <script></script>
