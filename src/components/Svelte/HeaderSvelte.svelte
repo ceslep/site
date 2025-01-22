@@ -13,11 +13,14 @@
   <div class="container mx-auto flex justify-between items-center p-4">
     <!-- Logo -->
     <a href="/" class="text-xl font-bold text-blue-500">
-      <img src="/src/assets/siteimgs/logo.png" class="w-32" alt="logo" />
+      <img src="src/assets/images/logo.png" class="w-32" alt="logo" />
     </a>
 
     <!-- Menú principal -->
     <nav class="hidden md:flex space-x-4">
+      <a href="/servicios" class="hover:text-gray-300 text-blue-400"
+      >Inicio</a
+    >
       <a href="/servicios" class="hover:text-gray-300 text-blue-400"
         >Servicios</a
       >
@@ -60,6 +63,9 @@
     class="md:hidden bg-blue-500 text-white fixed top-0 left-0 w-full p-4 shadow-lg z-50 hidden"
     id="mobile-menu"
   >
+  <a href="/servicios" class="hover:text-gray-300 text-blue-400"
+      >Inicio</a
+    >
     <a href="/servicios" class="hover:text-gray-300 text-blue-400">Servicios</a>
     <a href="/shop" class="hover:text-gray-300 text-blue-400">Ventas</a>
     {#each Posts as post}
