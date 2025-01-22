@@ -1,0 +1,45 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+---
+<Layout>
+
+   
+
+<div class="bg-black text-white font-sans">
+  <section class="text-center py-12 bg-black shadow">
+    <h1 class="text-4xl font-bold">Shop</h1>
+    <p class="mt-4 text-lg">
+      Explore our collection of products. Find what you need with ease!
+    </p>
+  </section>
+
+  <!-- Product Grid -->
+  <section class="py-12 px-6 lg:px-24">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Product Item -->
+      {Array.from({ length: 8 }).map((_, index) => (
+        <div class="bg-gray shadow-md rounded-lg overflow-hidden border border-white">
+          <img
+            src={`https://placehold.co/300x300/00FEAB/FFF`}
+            alt={`Product ${index + 1}`}
+            class="w-full h-56 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Product {index + 1}</h3>
+            <p class="mt-2 text-sm text-gray-600">This is a brief description of product {index + 1}.</p>
+            <div class="mt-4 flex justify-between items-center">
+              <span class="text-lg font-bold text-green-500">$19.99</span>
+              <button class="px-3 py-1 bg-blue-500 text-white text-sm font-semibold rounded hover:bg-blue-600">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</div>
+
+
+</Layout>

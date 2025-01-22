@@ -4,21 +4,26 @@
   const action = (node: any) => {
     node.addEventListener("click", () => {
       const mobileMenu = node.querySelector("#mobile-menu");
-      console.log(mobileMenu);
       mobileMenu?.classList.toggle("hidden");
     });
   };
 </script>
 
-<header class=" bg-gradient-to-b from-blue-200 to to-blue-500" use:action>
+<header class="bg-slate-800" use:action>
   <div class="container mx-auto flex justify-between items-center p-4">
     <!-- Logo -->
-    <a href="/" class="text-xl font-bold">Mi Sitio</a>
+    <a href="/" class="text-xl font-bold text-blue-500">
+      <img src="/src/assets/siteimgs/logo.png" class="w-32" alt="logo" />
+    </a>
 
     <!-- Menú principal -->
-    <nav class="hidden md:flex space-x-4"> 
+    <nav class="hidden md:flex space-x-4">
+      <a href="/servicios" class="hover:text-gray-300 text-blue-400"
+        >Servicios</a
+      >
+      <a href="/shop" class="hover:text-gray-300 text-blue-400">Ventas</a>
       {#each Posts as post}
-        <a href={`/info/${post.slug}`} class="hover:text-gray-300">{post.id}</a>
+        <!--   <a href={`/info/${post.slug}`} class="hover:text-gray-300 text-blue-300">{post.id}</a> -->
         <!-- content here -->
       {/each}
 
@@ -51,14 +56,16 @@
   </div>
 
   <!-- Menú móvil -->
-  <div 
-  class="md:hidden bg-blue-500 text-white fixed top-0 left-0 w-full p-4 shadow-lg z-50 hidden" 
-  id="mobile-menu"
->
+  <div
+    class="md:hidden bg-blue-500 text-white fixed top-0 left-0 w-full p-4 shadow-lg z-50 hidden"
+    id="mobile-menu"
+  >
+    <a href="/servicios" class="hover:text-gray-300 text-blue-400">Servicios</a>
+    <a href="/shop" class="hover:text-gray-300 text-blue-400">Ventas</a>
     {#each Posts as post}
-      <a href={`/info/${post.slug}`} class="block py-2 px-4 hover:bg-blue-700"
+      <!--  <a href={`/info/${post.slug}`} class="block py-2 px-4 hover:bg-blue-700"
         >{post.slug}</a
-      >
+      > -->
     {/each}
   </div>
 </header>
