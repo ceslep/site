@@ -18,13 +18,13 @@
 
     <!-- Menú principal -->
     <nav class="hidden md:flex space-x-4">
-      <a href="/servicios" class="hover:text-gray-300 text-blue-400"
+      <a href="/" class="hover:text-gray-300 text-blue-400"
       >Inicio</a
     >
       <a href="/servicios" class="hover:text-gray-300 text-blue-400"
         >Servicios</a
       >
-      <a href="/shop" class="hover:text-gray-300 text-blue-400">Ventas</a>
+      <a href="/ventas" class="hover:text-gray-300 text-blue-400">Ventas</a>
       {#each Posts as post}
         <!--   <a href={`/info/${post.slug}`} class="hover:text-gray-300 text-blue-300">{post.id}</a> -->
         <!-- content here -->
@@ -63,11 +63,11 @@
     class="md:hidden bg-blue-500 text-white fixed top-0 left-0 w-full p-4 shadow-lg z-50 hidden"
     id="mobile-menu"
   >
-  <a href="/servicios" class="hover:text-gray-300 text-blue-400"
+  <a href="/" class="hover:text-gray-300 text-blue-400"
       >Inicio</a
     >
     <a href="/servicios" class="hover:text-gray-300 text-blue-400">Servicios</a>
-    <a href="/shop" class="hover:text-gray-300 text-blue-400">Ventas</a>
+    <a href="/ventas" class="hover:text-gray-300 text-blue-400">Ventas</a>
     {#each Posts as post}
       <!--  <a href={`/info/${post.slug}`} class="block py-2 px-4 hover:bg-blue-700"
         >{post.slug}</a

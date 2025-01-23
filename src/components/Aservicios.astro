@@ -1,0 +1,78 @@
+---
+import { slide, fade } from "astro:transitions";
+
+function getRandomTransition() {
+  const transitions = [slide({ duration: "0.4s" }), fade({ duration: "0.4s" })];
+  const randomIndex = Math.floor(Math.random() * transitions.length);
+  return transitions[randomIndex];
+}
+
+
+---
+<main  transition:animate={getRandomTransition()}>
+<div class="bg-black text-white font-sans">
+    <section class="text-center py-12">
+      <h2 class="text-4xl font-bold">What We Do</h2>
+      <h1 class="text-5xl font-bold mt-4">Our Services</h1>
+      <p class="mt-6 text-lg">
+        We’re here to support American Innovators. Whether you’re a DIY enthusiast or a manufacturer,
+        we’re here to work alongside you on your projects, big or small!
+      </p>
+    </section>
+  
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-8 lg:px-24 py-12">
+      <!-- Service 1 -->
+      <div class="text-center">
+        <div class="flex justify-center items-center h-20 mb-4">
+          <!-- Icon placeholder -->
+          <div class="w-16 h-16 bg-red-500"></div>
+        </div>
+        <h3 class="text-xl font-bold">CNC fiber laser cutting</h3>
+        <p class="mt-4 text-sm">
+          3kw of power to cut up to 3/4” steel, 3/8” aluminum & stainless, plus many other materials.
+          Check out our FAQ page for a full list of materials we can laser cut. Or see the complete list
+          when you upload your DXF through the app.
+        </p>
+      </div>
+  
+      <!-- Service 2 -->
+      <div class="text-center">
+        <div class="flex justify-center items-center h-20 mb-4">
+          <!-- Icon placeholder -->
+          <div class="w-16 h-16 bg-red-500"></div>
+        </div>
+        <h3 class="text-xl font-bold">Bending</h3>
+        <p class="mt-4 text-sm">
+          We offer CNC bending using our servo-driven press-brake. This machine offers incredible accuracy and repeatability.
+          Check out our FAQ page for bending information you’ll need to know when designing your parts.
+        </p>
+      </div>
+  
+      <!-- Service 3 -->
+      <div class="text-center">
+        <div class="flex justify-center items-center h-20 mb-4">
+          <!-- Icon placeholder -->
+          <div class="w-16 h-16 bg-red-500"></div>
+        </div>
+        <h3 class="text-xl font-bold">Laser Engraving</h3>
+        <p class="mt-4 text-sm">
+          We offer laser engraving using our MOPA laser engraver. MOPA lasers allow you to etch color into stainless steel & titanium.
+          Check out our FAQ page for more information and examples of MOPA etching. For this service, please email us.
+        </p>
+      </div>
+  
+      <!-- Service 4 -->
+      <div class="text-center">
+        <div class="flex justify-center items-center h-20 mb-4">
+          <!-- Icon placeholder -->
+          <div class="w-16 h-16 bg-red-500"></div>
+        </div>
+        <h3 class="text-xl font-bold">CAD and Design Work</h3>
+        <p class="mt-4 text-sm">
+          If you need help with your CAD files or need assistance with a design, let us know! We use Fusion360 for all our CAD work and we’re happy to help you create the design you need.
+          Don’t let a lack of CAD design hold you back from building.
+        </p>
+      </div>
+    </section>
+  </div>
+</main>
