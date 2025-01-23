@@ -6,15 +6,27 @@ const descripcion = `
   basadas en la confianza y el compromiso con la excelencia.
 `;
 
-// Ajusta la ruta de la imagen a la que tengas en tu proyecto
-const imagenFondo = "/assets/solar.jpg";
+// Video de fondo
+const videoFondo = "src/assets/images/cortelaser.mp4";
 ---
 
 <section 
-  class="relative bg-cover bg-center flex items-center justify-center py-24 px-4 md:px-8"
-  style={`background-image: url(${imagenFondo});`}
+  class="relative flex items-center justify-center py-24 px-4 md:px-8"
 >
-  <!-- Capa semitransparente para oscurecer la imagen de fondo -->
+  <!-- Video de fondo en posición absoluta -->
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    class="absolute inset-0 w-full h-full object-cover"
+  >
+    <source src={videoFondo} type="video/mp4" />
+    <!-- Fallback en caso de que el navegador no soporte el video -->
+    Tu navegador no soporta la reproducción de video en HTML5.
+  </video>
+
+  <!-- Capa semitransparente para oscurecer el video de fondo -->
   <div class="absolute inset-0 bg-black/40"></div>
 
   <!-- Contenido principal -->
