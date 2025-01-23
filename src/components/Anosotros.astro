@@ -1,0 +1,61 @@
+---
+/**
+ * Componente: AcercaDe.astro
+ * Descripción: Sección de "Nosotros", "Misión" y "Visión" con video de fondo.
+ */
+
+ const videoFondo = "/src/assets/images/cleaning.mp4"; // Ajusta la ruta según tu proyecto
+---
+
+<section class="relative w-full min-h-screen bg-slate-800 flex items-center justify-center">
+  <!-- Video de fondo en posición absoluta -->
+  <video 
+    autoplay 
+    muted 
+    loop 
+    playsinline
+    class="absolute inset-0 w-full h-full object-cover"
+  >
+    <source src={videoFondo} type="video/mp4" />
+    <!-- Fallback para navegadores que no soportan video HTML5 -->
+    Tu navegador no soporta la reproducción de video en HTML5.
+  </video>
+
+  <!-- Overlay semitransparente -->
+  <div class="absolute inset-0 bg-slate-800/80"></div>
+
+  <!-- Contenido principal (texto) -->
+  <div class="relative z-10 max-w-3xl mx-auto px-6 py-12 text-slate-100">
+    <!-- Encabezado -->
+    <h1 class="text-3xl font-bold mb-2">Trazas Ingeniería S.A.S</h1>
+    <p class="text-sm text-slate-200 mb-8">Est 2017</p>
+
+    <!-- Sección: Nosotros -->
+    <h2 class="text-2xl font-semibold mb-4">Nosotros</h2>
+    <p class="mb-6 leading-relaxed">
+      TRAZAS INGENIERIA es una empresa líder en el sector metalmecánico, fundada en 2017 
+      en el corazón del Eje Cafetero. Desde nuestros inicios, nos hemos comprometido a 
+      ofrecer soluciones de alta calidad y precisión en el procesamiento de metales, 
+      apoyando a diversas industrias con nuestros servicios y productos especializados.
+    </p>
+
+    <!-- Sección: Misión -->
+    <h2 class="text-2xl font-semibold mb-4">Misión</h2>
+    <p class="mb-6 leading-relaxed">
+      TRAZAS INGENIERIA proporciona a nuestros clientes un servicio integral que abarca 
+      desde el corte láser de láminas y tuberías metálicas hasta el plegado de láminas, 
+      soldadura MIG y TIG, y pintura electrostática. Con una trayectoria que destaca por 
+      la innovación y la excelencia, contamos con tecnología de punta y un equipo altamente 
+      capacitado para garantizar resultados que cumplen con los más altos estándares de calidad.
+    </p>
+
+    <!-- Sección: Visión -->
+    <h2 class="text-2xl font-semibold mb-4">Visión</h2>
+    <p class="mb-6 leading-relaxed">
+      En TRAZAS INGENIERÍA nos proyectamos como líderes en la industria metalmecánica, 
+      reconocidos a nivel nacional por la excelencia y confiabilidad de nuestros productos. 
+      Nos comprometemos a mantener nuestra reputación de calidad, siendo la elección 
+      preferida de clientes que buscan soluciones metalmecánicas entre otras de primera clase.
+    </p>
+  </div>
+</section>

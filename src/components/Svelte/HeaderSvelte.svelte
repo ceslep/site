@@ -18,9 +18,8 @@
 
     <!-- Menú principal -->
     <nav class="hidden md:flex space-x-4">
-      <a href="/" class="hover:text-gray-300 text-blue-400"
-      >Inicio</a
-    >
+      <a href="/" class="hover:text-gray-300 text-blue-400">Inicio</a>
+      <a href="/nosotros" class="hover:text-gray-300 text-blue-400">Nosotros</a>
       <a href="/servicios" class="hover:text-gray-300 text-blue-400"
         >Servicios</a
       >
@@ -38,7 +37,7 @@
     <!-- Botón Menú móvil -->
     <button
       aria-label="Abrir menú"
-      class="md:hidden focus:outline-none"
+      class="md:hidden focus:outline-none text-white"
       id="menu-toggle"
     >
       <svg
@@ -60,14 +59,18 @@
 
   <!-- Menú móvil -->
   <div
-    class="md:hidden bg-blue-500 text-white fixed top-0 left-0 w-full p-4 shadow-lg z-50 hidden"
+    class="md:hidden bg-slate-800 text-white fixed top-0 left-0 w-full p-4 shadow-lg z-50 hidden"
     id="mobile-menu"
   >
-  <a href="/" class="hover:text-gray-300 text-blue-400"
-      >Inicio</a
-    >
-    <a href="/servicios" class="hover:text-gray-300 text-blue-400">Servicios</a>
-    <a href="/ventas" class="hover:text-gray-300 text-blue-400">Ventas</a>
+    <ul>
+      <li><a href="/" class="hover:text-gray-300 text-blue-400">Inicio</a></li>
+      <li><a href="/nosotros" class="hover:text-gray-300 text-blue-400">Nosotros</a></li>
+      <li><a href="/servicios" class="hover:text-gray-300 text-blue-400">Servicios</a></li>
+      <li><a href="/ventas" class="hover:text-gray-300 text-blue-400">Ventas</a></li>
+    </ul>
+    
+    
+    
     {#each Posts as post}
       <!--  <a href={`/info/${post.slug}`} class="block py-2 px-4 hover:bg-blue-700"
         >{post.slug}</a
