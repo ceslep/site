@@ -9,7 +9,7 @@
   };
 </script>
 
-<header class="bg-slate-800" use:action>
+<header class="bg-slate-800 fixed top-0 left-0 w-full z-50 shadow-lg" use:action>
   <div class="container mx-auto flex justify-between items-center p-4">
     <!-- Logo -->
     <a href="/" class="text-xl font-bold text-blue-500">
@@ -20,18 +20,11 @@
     <nav class="hidden md:flex space-x-4">
       <a href="/" class="hover:text-gray-300 text-blue-400">Inicio</a>
       <a href="/nosotros" class="hover:text-gray-300 text-blue-400">Nosotros</a>
-      <a href="/servicios" class="hover:text-gray-300 text-blue-400"
-        >Servicios</a
-      >
+      <a href="/servicios" class="hover:text-gray-300 text-blue-400">Servicios</a>
       <a href="/ventas" class="hover:text-gray-300 text-blue-400">Ventas</a>
       {#each Posts as post}
-        <!--   <a href={`/info/${post.slug}`} class="hover:text-gray-300 text-blue-300">{post.id}</a> -->
-        <!-- content here -->
+        <!-- Puedes agregar los enlaces dinámicos aquí -->
       {/each}
-
-      <!--  <a href={`/info/}`} class="hover:text-gray-300">Inicio</a>
-        <a href="/nosotros" class="hover:text-gray-300">Nosotros</a>
-        <a href="/servicios" class="hover:text-gray-300">Servicios</a> -->
     </nav>
 
     <!-- Botón Menú móvil -->
@@ -59,7 +52,7 @@
 
   <!-- Menú móvil -->
   <div
-    class="md:hidden bg-slate-800 text-white fixed top-0 left-0 w-full p-4 shadow-lg z-50 hidden"
+    class="md:hidden bg-slate-800 text-white fixed top-0 left-0 w-full p-4 shadow-lg z-40 hidden"
     id="mobile-menu"
   >
     <ul>
@@ -68,13 +61,8 @@
       <li><a href="/servicios" class="hover:text-gray-300 text-blue-400">Servicios</a></li>
       <li><a href="/ventas" class="hover:text-gray-300 text-blue-400">Ventas</a></li>
     </ul>
-    
-    
-    
     {#each Posts as post}
-      <!--  <a href={`/info/${post.slug}`} class="block py-2 px-4 hover:bg-blue-700"
-        >{post.slug}</a
-      > -->
+      <!-- Enlaces dinámicos -->
     {/each}
   </div>
 </header>
