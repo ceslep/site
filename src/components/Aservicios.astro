@@ -1,5 +1,14 @@
 ---
 import { slide, fade } from "astro:transitions";
+import desarrollo from "../assets/images/desarrollo.webp";
+import doblado from "../assets/images/doblado.webp";
+import soldaduratig from "../assets/images/soldaduratig.webp";
+import soldaduramig from "../assets/images/soldaduramig.webp";
+import cortetuberia from "../assets/images/cortetuberia.webp";
+import cortelaser from "../assets/images/cortelaser.webp";
+
+
+
 
 function getRandomTransition() {
   const transitions = [slide({ duration: "0.4s" }), fade({ duration: "0.4s" })];
@@ -10,32 +19,32 @@ function getRandomTransition() {
 
 const content=[
   {
-    "nombre": "newsite/assets/images/desarrollo.webp",
-    "procedimiento": "Diseño y desarrollo de componentes mecánicos.",
-    "descripcion": "Una representación de la etapa de diseño y desarrollo en una empresa de ingeniería, mostrando a un equipo colaborando en el modelado 3D de un componente mecánico, con planos técnicos y prototipos en un ambiente industrial profesional."
+    nombre:desarrollo,
+    procedimiento: "Diseño y desarrollo de componentes mecánicos.",
+    descripcion: "Una representación de la etapa de diseño y desarrollo en una empresa de ingeniería, mostrando a un equipo colaborando en el modelado 3D de un componente mecánico, con planos técnicos y prototipos en un ambiente industrial profesional."
   },
   {
-    "nombre": "newsite/assets/images/doblado.webp",
+    nombre: doblado,
     "procedimiento": "Doblado de láminas metálicas.",
     "descripcion": "Imagen del proceso de doblado de láminas metálicas en una empresa de fabricación, destacando una máquina de prensa hidráulica en acción, diseñada para garantizar precisión en cada doblez."
   },
   {
-    "nombre": "newsite/assets/images/soldaduratig.webp",
+    nombre: soldaduratig,
     "procedimiento": "Soldadura TIG en metales.",
     "descripcion": "Un soldador profesional realizando un proceso TIG en una empresa de manufactura avanzada, utilizando soldadura de alta precisión para unir componentes metálicos en un taller especializado."
   },
   {
-    "nombre": "newsite/assets/images/soldaduramig.webp",
+    nombre: soldaduramig,
     "procedimiento": "Soldadura MIG en estructuras metálicas.",
     "descripcion": "Representación del proceso de soldadura MIG en una empresa industrial, con un soldador trabajando para ensamblar estructuras metálicas con precisión y calidad, rodeado de chispas dinámicas."
   },
   {
-    "nombre": "newsite/assets/images/cortetuberia.webp",
+    nombre: cortetuberia,
     "procedimiento": "Corte láser de tuberías de acero inoxidable.",
     "descripcion": "Ilustración del corte de tuberías de acero inoxidable en una empresa especializada en procesos industriales, utilizando tecnología láser de alta precisión para garantizar cortes limpios y exactos."
   },
   {
-    "nombre": "newsite/assets/images/cortelaser.webp",
+    nombre: cortelaser,
     "procedimiento": "Corte láser de láminas metálicas.",
     "descripcion": "Una demostración del corte láser de láminas metálicas en una empresa de fabricación avanzada, con chispas brillantes y tecnología de punta que asegura resultados de alta calidad."
   }
@@ -50,7 +59,7 @@ const content=[
     {content.map((img) => (
       <div class="bg-slate-800 shadow-md rounded-lg overflow-hidden hover:scale-105 transform transition">
         <img 
-          src={`/${img.nombre}`} 
+          src={img.nombre.src} 
           alt={img.procedimiento} 
           class="w-full h-48 object-cover" 
         />

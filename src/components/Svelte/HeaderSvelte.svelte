@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { BASE_URL } from '@/config/global';
+  import logo from "../../assets/images/logo.png";
 
-  console.log({BASE_URL});
   let { Posts } = $props();
 
 
@@ -18,16 +18,16 @@
 <header class="bg-slate-800 fixed top-0 left-0 w-full z-50 shadow-lg" use:action>
   <div class="container mx-auto flex justify-between items-center p-4">
     <!-- Logo -->
-    <a href="/newsite/" class="text-xl font-bold text-blue-500">
-      <img src="/newsite/assets/images/logo.png" class="w-32" alt="logo" />
+    <a href="{BASE_URL}" class="text-xl font-bold text-blue-500">
+      <img src={logo.src} class="w-32" alt="logo" />
     </a>
 
     <!-- Menú principal -->
     <nav class="hidden md:flex space-x-4">
-      <a href="/newsite/" class="hover:text-gray-300 text-blue-400">Inicio</a>
-      <a href="/newsite/nosotros" class="hover:text-gray-300 text-blue-400">Nosotros</a>
-      <a href="/newsite/servicios" class="hover:text-gray-300 text-blue-400">Servicios</a>
-      <a href="/newsite/ventas" class="hover:text-gray-300 text-blue-400">Ventas</a>
+      <a href="{BASE_URL}" class="hover:text-gray-300 text-blue-400">Inicio</a>
+      <a href="{BASE_URL}nosotros" class="hover:text-gray-300 text-blue-400">Nosotros</a>
+      <a href="{BASE_URL}servicios" class="hover:text-gray-300 text-blue-400">Servicios</a>
+      <a href="{BASE_URL}ventas" class="hover:text-gray-300 text-blue-400">Ventas</a>
       {#each Posts as post}
         <!-- Puedes agregar los enlaces dinámicos aquí -->
       {/each}
@@ -62,10 +62,10 @@
     id="mobile-menu"
   >
     <ul>
-      <li><a href="/newsite/" class="hover:text-gray-300 text-blue-400">Inicio</a></li>
-      <li><a href="/newsite/nosotros" class="hover:text-gray-300 text-blue-400">Nosotros</a></li>
-      <li><a href="/newsite/servicios" class="hover:text-gray-300 text-blue-400">Servicios</a></li>
-      <li><a href="/newsite/ventas" class="hover:text-gray-300 text-blue-400">Ventas</a></li>
+      <li><a href="{BASE_URL}" class="hover:text-gray-300 text-blue-400">Inicio</a></li>
+      <li><a href="{BASE_URL}nosotros" class="hover:text-gray-300 text-blue-400">Nosotros</a></li>
+      <li><a href="{BASE_URL}servicios" class="hover:text-gray-300 text-blue-400">Servicios</a></li>
+      <li><a href="{BASE_URL}ventas" class="hover:text-gray-300 text-blue-400">Ventas</a></li>
     </ul>
     {#each Posts as post}
       <!-- Enlaces dinámicos -->

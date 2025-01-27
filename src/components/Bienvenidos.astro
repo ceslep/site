@@ -1,4 +1,6 @@
 ---
+
+import cortelaser from "../assets/images/cortelaser.mp4"
 const titulo = "Bienvenidos a Trazas Ingeniería";
 const descripcion = `
   En TRAZAS INGENIERÍA, no solo procesamos metales, sino que
@@ -7,7 +9,6 @@ const descripcion = `
 `;
 
 // Video de fondo
-const videoFondo = "assets/images/cortelaser.mp4";
 ---
 
 <section 
@@ -21,7 +22,7 @@ const videoFondo = "assets/images/cortelaser.mp4";
     playsinline
     class="absolute inset-0 w-full h-full object-cover"
   >
-    <source src={videoFondo} type="video/mp4" />
+    <source src={cortelaser} type="video/mp4" />
     <!-- Fallback en caso de que el navegador no soporte el video -->
     Tu navegador no soporta la reproducción de video en HTML5.
   </video>
