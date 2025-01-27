@@ -1,6 +1,7 @@
 ---
 
 import cortelaser from "../assets/images/cortelaser.mp4"
+import { BASE_URL } from '@/config/global';
 const titulo = "Bienvenidos a Trazas Ingeniería";
 const descripcion = `
   En TRAZAS INGENIERÍA, no solo procesamos metales, sino que
@@ -39,7 +40,7 @@ const descripcion = `
       {descripcion}
     </p>
     <a 
-      href="/servicios" 
+      href=`${BASE_URL}servicios` 
       class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded transition-colors"
     >
       Empecemos
