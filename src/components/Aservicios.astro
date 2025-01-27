@@ -1,11 +1,11 @@
 ---
 import { slide, fade } from "astro:transitions";
-import desarrollo from "../assets/images/desarrollo.webp";
-import doblado from "../assets/images/doblado.webp";
-import soldaduratig from "../assets/images/soldaduratig.webp";
-import soldaduramig from "../assets/images/soldaduramig.webp";
-import cortetuberia from "../assets/images/cortetuberia.webp";
-import cortelaser from "../assets/images/cortelaser.webp";
+import desarrollo from "../assets/gifs/desarrollo.gif";
+import doblado from "../assets/gifs/doblado.gif";
+import soldaduratig from "../assets/gifs/soldaduratig.gif";
+import soldaduramig from "../assets/gifs/soldaduramig.gif";
+import cortetuberia from "../assets/gifs/cortetuberia.gif";
+import cortelaser from "../assets/gifs/cortelaser.gif";
 
 
 
@@ -21,7 +21,8 @@ const content=[
   {
     nombre:desarrollo,
     procedimiento: "Diseño y desarrollo de componentes mecánicos.",
-    descripcion: "Una representación de la etapa de diseño y desarrollo en una empresa de ingeniería, mostrando a un equipo colaborando en el modelado 3D de un componente mecánico, con planos técnicos y prototipos en un ambiente industrial profesional."
+    descripcion: "Una representación de la etapa de diseño y desarrollo en una empresa de ingeniería, mostrando a un equipo colaborando en el modelado 3D de un componente mecánico, con planos técnicos y prototipos en un ambiente industrial profesional.",
+    pagina:"disdesa"
   },
   {
     nombre: doblado,
@@ -57,6 +58,7 @@ const content=[
   <div class="grid gap-6 p-4 md:grid-cols-2 lg:grid-cols-3 bg-slate-800 ">
     
     {content.map((img) => (
+      <a href={img.pagina}>
       <div class="bg-slate-800 shadow-md rounded-lg overflow-hidden hover:scale-105 transform transition">
         <img 
           src={img.nombre.src} 
@@ -68,6 +70,7 @@ const content=[
           <p class="text-sm text-slate-50  mt-2">{img.descripcion}</p>
         </div>
       </div>
+      </a>
     ))}
   </div>
    
