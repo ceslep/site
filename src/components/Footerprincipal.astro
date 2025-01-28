@@ -1,0 +1,124 @@
+---
+// FooterPrincipal.astro
+const year= new Date().getFullYear();
+---
+
+<footer class="bg-slate-800 text-slate-100">
+    <div class="max-w-7xl mx-auto px-4 py-2">
+      <!-- Contenido principal del footer -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Columna 1: Información y mapa -->
+        <div>
+          <h2 class="text-xl font-bold mb-2">Trazas Ingeniería S.A.S.</h2>
+          <p>Zona Industrial La Badea</p>
+          <p>Mz.3 Bodega 19A - Dosquebradas</p>
+          <p class="mt-2">Teléfono: 313 710 1320</p>
+          <p>Email: <a href="mailto:gerencia@trazas-ingenieria.com" class="text-blue-400 hover:underline">gerencia@trazas-ingenieria.com</a></p>
+  
+          <!-- Redes sociales -->
+          <div class="flex space-x-4 mt-4">
+            <!-- Facebook -->
+            <a href="#" aria-label="Facebook" class="hover:text-blue-400">
+              <!-- Ejemplo de ícono SVG de Facebook -->
+              <svg fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5">
+                <path
+                  d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24h11.496v-9.294H9.847V11.11h2.973V8.414c0-2.944 1.797-4.548 4.422-4.548 1.257 0 2.337.093 2.65.135v3.07h-1.818c-1.425 0-1.7.678-1.7 1.67v2.27h3.398l-.443 3.596h-2.955V24h5.789c.73 0 1.324-.593 1.324-1.324V1.325C24 .593 23.407 0 22.675 0z"
+                />
+              </svg>
+            </a>
+  
+            <!-- Instagram -->
+            <a href="#" aria-label="Instagram" class="hover:text-pink-400">
+              <!-- Ícono SVG de Instagram -->
+              <svg fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5">
+                <path
+                  d="M12 2.163c3.2 0 3.584.012 4.85.07 1.17.056 1.956.24 2.408.403.585.213 1 .47 1.441.911.441.441.698.856.91 1.441.164.452.348 1.238.404 2.408.059 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.24 1.956-.403 2.408-.213.585-.47 1-.911 1.441-.441.441-.856.698-1.441.91-.452.164-1.238.348-2.408.404-1.266.059-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.956-.24-2.408-.403a3.55 3.55 0 0 1-1.441-.911 3.55 3.55 0 0 1-.91-1.441c-.164-.452-.348-1.238-.404-2.408C2.175 15.584 2.163 15.2 2.163 12s.012-3.584.07-4.85c.056-1.17.24-1.956.403-2.408.213-.585.47-1 .911-1.441.441-.441.856-.698 1.441-.91.452-.164 1.238-.348 2.408-.404C8.416 2.175 8.8 2.163 12 2.163zm0 1.62c-3.17 0-3.552.012-4.805.07-1.03.047-1.58.218-1.948.363-.49.19-.84.418-1.209.787a2.133 2.133 0 0 0-.787 1.209c-.145.369-.316.918-.363 1.948-.059 1.253-.07 1.635-.07 4.805 0 3.17.012 3.552.07 4.805.047 1.03.218 1.58.363 1.948.19.49.418.84.787 1.209.369.369.718.598 1.209.787.369.145.918.316 1.948.363 1.253.059 1.635.07 4.805.07s3.552-.012 4.805-.07c1.03-.047 1.58-.218 1.948-.363.49-.19.84-.418 1.209-.787.369-.369.598-.718.787-1.209.145-.369.316-.918.363-1.948.059-1.253.07-1.635.07-4.805 0-3.17-.012-3.552-.07-4.805-.047-1.03-.218-1.58-.363-1.948-.19-.49-.418-.84-.787-1.209a2.133 2.133 0 0 0-1.209-.787c-.369-.145-.918-.316-1.948-.363-1.253-.059-1.635-.07-4.805-.07zM12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.141a3.979 3.979 0 1 1 0-7.958 3.979 3.979 0 0 1 0 7.958zm5.2-10.641a1.44 1.44 0 1 0 0-2.881 1.44 1.44 0 0 0 0 2.881z"
+                />
+              </svg>
+            </a>
+  
+            <!-- LinkedIn -->
+            <a href="#" aria-label="LinkedIn" class="hover:text-blue-600">
+              <!-- Ícono SVG de LinkedIn -->
+              <svg fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 
+                     2.239 5 5 5h14c2.761 0 5-2.239 
+                     5-5v-14c0-2.761-2.239-5-5-5zm-11 
+                     19h-3v-10h3v10zm-1.5-11.451c-.966 
+                     0-1.75-.784-1.75-1.75s.784-1.75 
+                     1.75-1.75 1.75.784 
+                     1.75 1.75-.784 1.75-1.75 
+                     1.75zm13.5 11.451h-3v-5.604c0-1.337-.025-3.058-1.865-3.058-1.865 
+                     0-2.151 1.455-2.151 2.958v5.704h-3v-10h2.885v1.367h.041c.403-.76 
+                     1.386-1.559 2.852-1.559 3.051 0 3.61 2.008 
+                     3.61 4.619v5.573z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+          <!-- Mapa embebido -->
+          <div class="mt-4 relative w-full pb-[56.25%] overflow-hidden">
+            <iframe
+              class="absolute top-0 left-0 w-full h-full border-0"
+              src="https://www.google.com/maps?q=4.825694%2C-75.698621&z=21&output=embed"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+          
+          
+          
+          
+  
+        <!-- Columna 2: Productos -->
+        <div>
+          <h3 class="text-xl font-bold mb-2">Productos</h3>
+          <ul class="space-y-1">
+            <li>Acero Inoxidable</li>
+            <li>Acero al carbón</li>
+            <li>Otros Materiales</li>
+          </ul>
+        </div>
+  
+        <!-- Columna 3: Servicios -->
+        <div>
+          <h3 class="text-xl font-bold mb-2">Servicios</h3>
+          <ul class="space-y-1">
+            <li>Corte Laser de lamina</li>
+            <li>Corte laser de tuberia</li>
+            <li>Soldadura MIG</li>
+            <li>Soldadura TIG</li>
+            <li>Doblado de lámina</li>
+            <li>Ensamble</li>
+            <li>Diseño y desarrollo</li>
+            <li>Pintura electrostática</li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Línea inferior del footer -->
+      <div class="mt-8 pt-4 border-t border-slate-600 flex flex-col md:flex-row items-center justify-between">
+        <p class="mb-2 md:mb-0 text-sm">
+          © {year} Copyright 
+          <span class="font-semibold">Trazas Ingeniería S.A.S.</span>
+          All Rights Reserved
+        </p>
+        <p class="text-sm">
+          Designed by
+          <a 
+            href="ceslep@gmail.com" 
+            class="text-blue-400 hover:underline" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            ceslep@gmail.com
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  

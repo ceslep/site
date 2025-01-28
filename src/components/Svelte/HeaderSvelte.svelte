@@ -12,6 +12,13 @@
     });
   };
 
+  const navLinks = [
+  { label: 'Inicio', href: `${BASE_URL}` },
+  { label: 'Nosotros', href: `${BASE_URL}nosotros` },
+  { label: 'Servicios', href: `${BASE_URL}servicios` },
+  { label: 'Productos', href: `${BASE_URL}productos` },
+];
+
   
 </script>
 
@@ -24,12 +31,9 @@
 
     <!-- Menú principal -->
     <nav class="hidden md:flex space-x-4">
-      <a href="{BASE_URL}" class="hover:text-gray-300 text-blue-400">Inicio</a>
-      <a href="{BASE_URL}nosotros" class="hover:text-gray-300 text-blue-400">Nosotros</a>
-      <a href="{BASE_URL}servicios" class="hover:text-gray-300 text-blue-400">Servicios</a>
-      <a href="{BASE_URL}productos" class="hover:text-gray-300 text-blue-400">Productos</a>
-      {#each Posts as post}
-        <!-- Puedes agregar los enlaces dinámicos aquí -->
+     
+      {#each navLinks as {href, label}}
+      <a href="{href}" class="hover:text-gray-300 text-blue-400">{label}</a>
       {/each}
     </nav>
 
@@ -61,14 +65,12 @@
     class="md:hidden bg-slate-800 text-white fixed top-0 left-0 w-full p-4 shadow-lg z-40 hidden"
     id="mobile-menu"
   >
-    <ul>
-      <li><a href="{BASE_URL}" class="hover:text-gray-300 text-blue-400">Inicio</a></li>
-      <li><a href="{BASE_URL}nosotros" class="hover:text-gray-300 text-blue-400">Nosotros</a></li>
-      <li><a href="{BASE_URL}servicios" class="hover:text-gray-300 text-blue-400">Servicios</a></li>
-      <li><a href="{BASE_URL}ventas" class="hover:text-gray-300 text-blue-400">Ventas</a></li>
+  
+    <ul class="space-y-3">
+      {#each navLinks as {href, label}}
+       <li><a href="{href}" class="hover:text-gray-300 text-blue-400">{label}</a></li>
+      {/each}
     </ul>
-    {#each Posts as post}
-      <!-- Enlaces dinámicos -->
-    {/each}
+   
   </div>
 </header>

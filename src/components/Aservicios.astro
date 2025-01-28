@@ -7,6 +7,7 @@ import soldaduramig from "../assets/gifs/soldaduramig.gif";
 import cortetuberia from "../assets/gifs/cortetuberia.gif";
 import cortelaser from "../assets/gifs/cortelaser.gif";
 import { BASE_URL } from '@/config/global';
+import cortelaser2 from "../assets/videos/cortelaser.mp4"
 
 
 
@@ -57,6 +58,17 @@ const content=[
 
 ---
 <main  transition:animate={getRandomTransition()}>
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    class="absolute inset-0 w-full h-full object-cover"
+  >
+    <source src={cortelaser2} type="video/mp4" />
+    <!-- Fallback en caso de que el navegador no soporte el video -->
+    Tu navegador no soporta la reproducción de video en HTML5.
+  </video>
   <h1 class="text-3xl font-bold py-16 bg-slate-800 text-slate-50 text-center">Servicios</h1>
   <div class="grid gap-6 p-4 md:grid-cols-2 lg:grid-cols-3 bg-slate-800 ">
     

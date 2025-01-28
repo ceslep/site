@@ -4,6 +4,7 @@ import { slide, fade } from "astro:transitions";
 // Reemplaza con tus archivos reales en ../assets/gifs
 import aceroinoxidable from "@assets/images/aceroinoxidable.webp";
 import acero from "@assets/images/acero.webp";
+import cortelaser from "@assets/videos/cortelaser.mp4";
 
 // Si usas una variable global para la base del proyecto
 import { BASE_URL } from "@/config/global";
@@ -36,6 +37,17 @@ const productos = [
 ---
 
 <main transition:animate={getRandomTransition()} class="bg-slate-800 h-full">
+    <video
+    autoplay
+    muted
+    loop
+    playsinline
+    class="absolute inset-0 w-full h-full object-cover"
+  >
+    <source src={cortelaser} type="video/mp4" />
+    <!-- Fallback en caso de que el navegador no soporte el video -->
+    Tu navegador no soporta la reproducción de video en HTML5.
+  </video>
   <h1 class="text-3xl font-bold py-16 bg-slate-800 text-slate-50 text-center">
     Productos de Acero Inoxidable
   </h1>
