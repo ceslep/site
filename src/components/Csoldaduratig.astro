@@ -1,0 +1,109 @@
+---
+import tig1 from "@/assets/videos/tig1.mp4";
+import tig2 from "@/assets/videos/tig2.mp4";
+import tig3 from "@/assets/videos/tig3.mp4";
+import tig4 from "@/assets/videos/tig4.mp4";
+
+const year= new Date().getFullYear();
+
+---
+
+<main class="bg-slate-800 text-slate-100 font-sans p-16">
+  <a href="javascript:history.back()" class="p-3 text-slate-100 hover:text-slate-400 flex items-center mb-4">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+    </svg>
+    Atrás
+  </a>
+
+  <header class="py-4 text-center border-b border-slate-800">
+    <h1 class="text-3xl font-bold">Soldadura TIG</h1>
+    <p class="text-lg mt-4">
+      La soldadura TIG es un proceso de soldadura de alta precisión utilizado en una variedad de industrias que requiere un acabado limpio y uniforme.
+    </p>
+  </header>
+
+  <main class="p-6 md:p-12">
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold mb-4">Introducción</h2>
+      <p class="leading-relaxed text-justify md:text-start">
+        La soldadura TIG (Tungsten Inert Gas) utiliza un electrodo de tungsteno no consumible y gas inerte para proteger la soldadura. Este proceso es ideal para soldar materiales como acero inoxidable, aluminio y magnesio, ofreciendo un nivel de precisión superior y acabados impecables.
+      </p>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-slate-800 p-4 rounded-lg shadow-lg">
+        <video  autoplay
+        muted
+        loop
+        playsinline
+        class="w-50 mx-auto h-auto rounded-md">
+          <source src={`${tig1}`} type="video/mp4" />
+          Tu navegador no soporta la reproducción de videos.
+        </video>
+        <h3 class="text-lg font-semibold mt-4">Soldadura de Acero Inoxidable</h3>
+        <p class="text-sm leading-relaxed">
+          En este video, mostramos cómo el proceso TIG produce soldaduras limpias y duraderas en acero inoxidable.
+        </p>
+      </div>
+
+      <div class="bg-slate-800 p-4 rounded-lg shadow-lg">
+        <video 
+        
+        autoplay
+        muted
+        loop
+        playsinline
+        class="w-50 mx-auto h-auto rounded-md">
+          <source src={`${tig2}`} type="video/mp4" />
+          Tu navegador no soporta la reproducción de videos.
+        </video>
+        <h3 class="text-lg font-semibold mt-4">Soldadura de Aluminio</h3>
+        <p class="text-sm leading-relaxed">
+          El aluminio es un material desafiante para soldar, pero con TIG, logramos resultados precisos y sin defectos.
+        </p>
+      </div>
+
+      <div class="bg-slate-800 p-4 rounded-lg shadow-lg">
+        <video  autoplay
+        muted
+        loop
+        playsinline
+        class="w-50 h-auto rounded-md mx-auto">
+          <source src={`${tig3}`} type="video/mp4" />
+          Tu navegador no soporta la reproducción de videos.
+        </video>
+        <h3 class="text-lg font-semibold mt-4">Aplicaciones Industriales</h3>
+        <p class="text-sm leading-relaxed">
+          Este video destaca el uso de la soldadura TIG en aplicaciones industriales complejas.
+        </p>
+      </div>
+
+      <div class="bg-slate-800 p-4 rounded-lg shadow-lg">
+        <video  autoplay
+        muted
+        loop
+        playsinline
+        class="w-50 mx-auto h-auto rounded-md">
+          <source src={`${tig4}`} type="video/mp4" />
+          Tu navegador no soporta la reproducción de videos.
+        </video>
+        <h3 class="text-lg font-semibold mt-4">Acabados de Alta Calidad</h3>
+        <p class="text-sm leading-relaxed">
+          Observa cómo la soldadura TIG logra acabados impecables y estéticamente agradables.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="text-xl font-semibold mb-4">Ventajas de la Soldadura TIG</h2>
+      <p class="leading-relaxed">
+        La soldadura TIG ofrece múltiples ventajas, como alta precisión, control total sobre el proceso, resultados de alta calidad y versatilidad para trabajar con diversos materiales.
+      </p>
+    </section>
+  </main>
+
+  <footer class="py-4 text-center border-t border-slate-800">
+    <p class="text-sm">© {year} Trazas ingeniería. Todos los derechos reservados.</p>
+  </footer>
+</main>

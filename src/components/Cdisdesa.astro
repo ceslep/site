@@ -1,25 +1,48 @@
 ---
 import desarrollo from "@/assets/images/desarrollo.webp"
 import engranajes from "@/assets/images/engranajes.webp"
+import ejesyrodamientos from "@/assets/images/ejesyrodamientos.webp"
+import cad from "@/assets/images/cad.webp"
+import desarrollo2 from "../assets/gifs/desarrollo.gif"
+
+const year= new Date().getFullYear();
 ---
 
-<main class="bg-slate-800 text-slate-100 font-sans p-16">
-    <header class="py-4 text-center border-b border-slate-800">
+<main class="bg-slate-800 text-slate-100 font-sans p-16" 
+transition:animate="fade">
+<a href="javascript:history.back()" class="p-3 text-slate-100 hover:text-slate-400 flex items-center mb-4" transition:animate="slide">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+  </svg>
+  Atrás
+</a>
+  <div class=""></div>
+    
+  
+    <header class="grid md:grid-cols-[25%_75%] gap-4 py-4 text-center border-b border-slate-800 items-center justify-items-center rounded-sm">
+      <img 
+          src={desarrollo2.src}
+          alt="" 
+          class="w-25 h-48 object-cover rounded-md mx-auto"
+          transition:name="fade0" 
+        />
       <h1 class="text-3xl font-bold">Diseño y Desarrollo de Componentes Mecánicos</h1>
-      <img src=`${desarrollo.src}` alt="Desarrollo" class="rounded-md mx-auto image w-96 h-64 p-3" />
+      
     </header>
+    <img loading="lazy" src=`${desarrollo.src}` alt="Desarrollo" class="rounded-md mx-auto image w-96 h-64 p-3" />
 
     <main class="p-6 md:p-12">
       <section class="mb-8">
         <h2 class="text-xl font-semibold mb-4">Introducción</h2>
-        <p class="leading-relaxed">
+        <p class="leading-relaxed text-justify md:text-start">
           El diseño y desarrollo de componentes mecánicos es un proceso crucial en la ingeniería. Desde engranajes hasta estructuras complejas, cada pieza desempeña un papel fundamental en garantizar la funcionalidad y durabilidad de un sistema mecánico.
         </p>
       </section>
 
       <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="bg-slate-800 p-4 rounded-lg shadow-lg">
-          <img src=`${engranajes.src}` alt="Desarrollo" class="rounded-md h-32 p-3" />
+          <img loading="lazy" src=`${engranajes.src}` alt="Desarrollo" class="rounded-md h-32 
+          mx-auto  aspect-16/9 object-cover w-48" />
           <h3 class="text-lg font-semibold mb-2">Engranajes</h3>
           <p class="text-sm leading-relaxed">
             Los engranajes son esenciales para transmitir potencia mecánica en sistemas industriales y vehículos.
@@ -27,7 +50,7 @@ import engranajes from "@/assets/images/engranajes.webp"
         </div>
 
         <div class="bg-slate-800 p-4 rounded-lg shadow-lg">
-          <img src="https://via.placeholder.com/300x200" alt="Ejes y rodamientos" class="rounded-md mb-4">
+          <img loading="lazy" src=`${ejesyrodamientos.src}` alt="Ejes y rodamientos" class="rounded-md h-32  aspect-16/9 object-cover mx-auto" />
           <h3 class="text-lg font-semibold mb-2">Ejes y Rodamientos</h3>
           <p class="text-sm leading-relaxed">
             Los ejes y rodamientos aseguran un movimiento fluido y eficiente en los mecanismos.
@@ -35,7 +58,7 @@ import engranajes from "@/assets/images/engranajes.webp"
         </div>
 
         <div class="bg-slate-800 p-4 rounded-lg shadow-lg">
-          <img src="https://via.placeholder.com/300x200" alt="Diseño CAD" class="rounded-md mb-4">
+          <img loading="lazy" src=`${cad.src}` alt="CAD" class="rounded-md h-32 aspect-16/9 object-cover mx-auto" />
           <h3 class="text-lg font-semibold mb-2">Diseño CAD</h3>
           <p class="text-sm leading-relaxed">
             El software CAD permite modelar componentes con precisión antes de su fabricación.
@@ -52,6 +75,6 @@ import engranajes from "@/assets/images/engranajes.webp"
     </main>
 
     <footer class="py-4 text-center border-t border-slate-800">
-      <p class="text-sm">© 2025 Trazas Ingeniería. Todos los derechos reservados.</p>
+      <p class="text-sm">© {year} Trazas Ingeniería. Todos los derechos reservados.</p>
     </footer>
   </main>

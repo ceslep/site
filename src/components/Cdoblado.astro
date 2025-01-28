@@ -1,0 +1,75 @@
+---
+import dobladoprecision from "@/assets/images/dobladoprecision.webp"
+import dobladocalidad from "@/assets/images/dobladocalidad.webp"
+import dobladomaquinaria from "@/assets/images/dobladomaquinaria.webp"
+import dobladoprocesos from "@/assets/images/dobladoprocesos.webp"
+import doblado2 from "../assets/gifs/doblado.gif"
+
+const year= new Date().getFullYear();
+---
+
+<main class="bg-slate-800 text-slate-100 font-sans p-16" transition:animate="fade">
+  <a href="javascript:history.back()" class="p-3 text-slate-100 hover:text-slate-400 flex items-center mb-4" transition:animate="slide">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+    </svg>
+    Atrás
+  </a>
+
+  <header class="grid md:grid-cols-[25%_75%] gap-4 py-4 text-center border-b border-slate-800 items-center justify-items-center rounded-sm">
+    <img 
+    src={doblado2.src}
+    alt="" 
+    class="w-25 h-48 object-cover rounded-md mx-auto"
+    transition:name="fade0" 
+  />
+    <h1 class="text-3xl font-bold">Doblado de Láminas Metálicas</h1>
+</header>
+<img loading="lazy" src={`${dobladoprecision.src}`} alt="Precisión en doblado" class="rounded-md mx-auto image w-96 h-64 p-3" />
+
+  <main class="p-6 md:p-12">
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold mb-4">Introducción</h2>
+      <p class="leading-relaxed text-justify md:text-start">
+        El doblado de láminas metálicas es un proceso clave en la fabricación de piezas industriales. Con la tecnología adecuada y un enfoque de alta precisión, es posible obtener resultados excepcionales que cumplen con los estándares más exigentes.
+      </p>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-slate-800 p-4 rounded-lg shadow-lg">
+        <img loading="lazy" src={`${dobladocalidad.src}`} alt="Calidad en los procesos" class="rounded-md h-32 aspect-16/9 object-cover mx-auto w-48" />
+        <h3 class="text-lg font-semibold mb-2">Calidad Garantizada</h3>
+        <p class="text-sm leading-relaxed">
+          Aseguramos calidad en cada pliegue, manteniendo estándares altos en cada proyecto.
+        </p>
+      </div>
+
+      <div class="bg-slate-800 p-4 rounded-lg shadow-lg">
+        <img loading="lazy" src={`${dobladomaquinaria.src}`} alt="Maquinaria avanzada" class="rounded-md h-32 aspect-16/9 object-cover mx-auto" />
+        <h3 class="text-lg font-semibold mb-2">Tecnología Avanzada</h3>
+        <p class="text-sm leading-relaxed">
+          Utilizamos maquinaria moderna para garantizar precisión y eficiencia en el doblado.
+        </p>
+      </div>
+
+      <div class="bg-slate-800 p-4 rounded-lg shadow-lg">
+        <img loading="lazy" src={`${dobladoprocesos.src}`} alt="Procesos controlados" class="rounded-md h-32 aspect-16/9 object-cover mx-auto" />
+        <h3 class="text-lg font-semibold mb-2">Procesos Controlados</h3>
+        <p class="text-sm leading-relaxed">
+          Cada etapa del proceso es supervisada para asegurar la calidad del producto final.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="text-xl font-semibold mb-4">¿Por qué confiar en nosotros?</h2>
+      <p class="leading-relaxed">
+        Contamos con años de experiencia en la industria y un equipo altamente calificado que garantiza resultados superiores en el doblado de láminas metálicas. Nos comprometemos con la precisión, la calidad y la satisfacción de nuestros clientes.
+      </p>
+    </section>
+  </main>
+
+  <footer class="py-4 text-center border-t border-slate-800">
+    <p class="text-sm">© {year} Trazas ingeniería. Todos los derechos reservados.</p>
+  </footer>
+</main>

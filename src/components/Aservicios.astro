@@ -27,12 +27,14 @@ const content=[
   {
     nombre: doblado,
     "procedimiento": "Doblado de láminas metálicas.",
-    "descripcion": "Imagen del proceso de doblado de láminas metálicas en una empresa de fabricación, destacando una máquina de prensa hidráulica en acción, diseñada para garantizar precisión en cada doblez."
+    "descripcion": "Imagen del proceso de doblado de láminas metálicas en una empresa de fabricación, destacando una máquina de prensa hidráulica en acción, diseñada para garantizar precisión en cada doblez.",
+    pagina:"doblado"
   },
   {
     nombre: soldaduratig,
     "procedimiento": "Soldadura TIG en metales.",
-    "descripcion": "Un soldador profesional realizando un proceso TIG en una empresa de manufactura avanzada, utilizando soldadura de alta precisión para unir componentes metálicos en un taller especializado."
+    "descripcion": "Un soldador profesional realizando un proceso TIG en una empresa de manufactura avanzada, utilizando soldadura de alta precisión para unir componentes metálicos en un taller especializado.",
+    pagina:"soldaduratig"
   },
   {
     nombre: soldaduramig,
@@ -57,13 +59,14 @@ const content=[
   <h1 class="text-3xl font-bold mb-2 py-16 bg-slate-800 text-slate-50 text-center">Servicios</h1>
   <div class="grid gap-6 p-4 md:grid-cols-2 lg:grid-cols-3 bg-slate-800 ">
     
-    {content.map((img) => (
-      <a href={img.pagina}>
+    {content.map((img,index) => (
+      <a href={"servicios/"+img.pagina} transition:animate="slide">
       <div class="bg-slate-800 shadow-md rounded-lg overflow-hidden hover:scale-105 transform transition">
         <img 
+          transition:name={"fade"+index} 
           src={img.nombre.src} 
           alt={img.procedimiento} 
-          class="w-full h-48 object-cover" 
+          class="w-full h-48 object-cover"
         />
         <div class="p-4">
           <h2 class="text-lg font-semibold text-slate-100">{img.procedimiento}</h2>
