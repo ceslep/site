@@ -1,0 +1,68 @@
+---
+import { slide, fade } from "astro:transitions";
+// Ejemplo de importación de gifs o imágenes.
+// Reemplaza con tus archivos reales en ../assets/gifs
+import aceroinoxidable from "@assets/images/aceroinoxidable.webp";
+import acero from "@assets/images/acero.webp";
+
+// Si usas una variable global para la base del proyecto
+import { BASE_URL } from "@/config/global";
+
+// Función para alternar transiciones de manera aleatoria
+function getRandomTransition() {
+  const transitions = [slide({ duration: "0.4s" }), fade({ duration: "0.4s" })];
+  const randomIndex = Math.floor(Math.random() * transitions.length);
+  return transitions[randomIndex];
+}
+
+// Array de productos en acero inoxidable
+const productos = [
+  {
+    nombre: aceroinoxidable,
+    titulo: "Láminas de Acero Inoxidable",
+    descripcion:
+      "Fabricadas con la más alta calidad, resistentes a la corrosión y perfectas para proyectos de corte, doblez y fabricación de piezas.",
+    pagina: "lamina-inox" // Este slug se concatenará en la URL
+  },
+  {
+    nombre: acero,
+    titulo: "Láminas de Acero",
+    descripcion:
+      "Placas de acero inoxidable de diversos calibres. ",
+    pagina: "acero-inox"
+  },
+  
+];
+---
+
+<main transition:animate={getRandomTransition()} class="bg-slate-800 h-full">
+  <h1 class="text-3xl font-bold py-16 bg-slate-800 text-slate-50 text-center">
+    Productos de Acero Inoxidable
+  </h1>
+
+  <div class="grid gap-6 p-4 md:grid-cols-2 lg:grid-cols-2 bg-slate-800 justify-center ">
+    {productos.map((prod, index) => (
+      <a 
+        href={BASE_URL + "productos/" + prod.pagina} 
+        transition:animate="slide"
+      >
+        <div class="bg-slate-800 shadow-md rounded-lg overflow-hidden hover:scale-105 transform transition">
+          <img
+            transition:name={"fade" + index}
+            src={prod.nombre.src}
+            alt={prod.titulo}
+            class="w-full h-64 object-cover"
+          />
+          <div class="p-4">
+            <h2 class="text-lg font-semibold text-slate-100">
+              {prod.titulo}
+            </h2>
+            <p class="text-sm text-slate-50 mt-2">
+              {prod.descripcion}
+            </p>
+          </div>
+        </div>
+      </a>
+    ))}
+  </div>
+</main>

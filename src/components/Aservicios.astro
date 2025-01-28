@@ -6,6 +6,7 @@ import soldaduratig from "../assets/gifs/soldaduratig.gif";
 import soldaduramig from "../assets/gifs/soldaduramig.gif";
 import cortetuberia from "../assets/gifs/cortetuberia.gif";
 import cortelaser from "../assets/gifs/cortelaser.gif";
+import { BASE_URL } from '@/config/global';
 
 
 
@@ -56,11 +57,11 @@ const content=[
 
 ---
 <main  transition:animate={getRandomTransition()}>
-  <h1 class="text-3xl font-bold mb-2 py-16 bg-slate-800 text-slate-50 text-center">Servicios</h1>
+  <h1 class="text-3xl font-bold py-16 bg-slate-800 text-slate-50 text-center">Servicios</h1>
   <div class="grid gap-6 p-4 md:grid-cols-2 lg:grid-cols-3 bg-slate-800 ">
     
     {content.map((img,index) => (
-      <a href={"servicios/"+img.pagina} transition:animate="slide">
+      <a href={BASE_URL+"servicios/"+img.pagina} transition:animate="slide">
       <div class="bg-slate-800 shadow-md rounded-lg overflow-hidden hover:scale-105 transform transition">
         <img 
           transition:name={"fade"+index} 

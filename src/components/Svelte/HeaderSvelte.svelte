@@ -27,7 +27,7 @@
       <a href="{BASE_URL}" class="hover:text-gray-300 text-blue-400">Inicio</a>
       <a href="{BASE_URL}nosotros" class="hover:text-gray-300 text-blue-400">Nosotros</a>
       <a href="{BASE_URL}servicios" class="hover:text-gray-300 text-blue-400">Servicios</a>
-      <a href="{BASE_URL}ventas" class="hover:text-gray-300 text-blue-400">Ventas</a>
+      <a href="{BASE_URL}productos" class="hover:text-gray-300 text-blue-400">Productos</a>
       {#each Posts as post}
         <!-- Puedes agregar los enlaces dinámicos aquí -->
       {/each}
